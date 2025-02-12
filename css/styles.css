@@ -229,22 +229,29 @@ img {
 /*---------------------FEATURES---------------------------*/
 
 .features {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  /*padding-top: 120px;
+  padding-bottom: 120px;*/
+  padding-top: 96px;
+  padding-bottom: 96px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .features-list {
   background-color: #ffffff;
   display: flex;
-  gap: 24px;
+  justify-content: space-between;
+  /*gap: 24px;*/
+  gap: 72px;
 }
 .features-item {
   max-width: 264px;
-  width: calc((100% - 72px) / 4);
+  /*width: calc((100% - 72px) / 4);*/
 }
 .features-icon {
-  display: flex;
+  /*display: flex;
   gap: 24px;
-  justify-content: space-between;
+  justify-content: space-between;*/
+  display: none;
 }
 .card-conteiner-icon {
   width: 264px;
@@ -783,4 +790,28 @@ img {
 .icon-check {
 }
 .check-button {
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 736px;
+  }
+  .features-list {
+    gap: 24px 72px;
+  }
+  .features-item {
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    width: 736px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .features-list {
+    gap: 72px 24px;
+  }
+  .features-item {
+    width: calc((100% - 72px) / 4);
+  }
 }
