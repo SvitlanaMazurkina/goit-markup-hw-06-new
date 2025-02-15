@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   color: #434455;
   background-color: #ffffff;
@@ -11,8 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 a {
@@ -35,11 +39,14 @@ img {
   display: block;
 }
 .container {
-  max-width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* max-width: 1158px;*/
+  max-width: 320px;
+  /*padding-left: 15px;
+  padding-right: 15px;*/
+  padding: 96px 16px;
   margin: 0 auto;
 }
+
 .section-titel {
   color: var(--NAVY-BLUE, #2e2f42);
   text-align: center;
@@ -60,7 +67,7 @@ img {
   color: var(--SLATE, #434455);
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 .visually-hidden {
   position: absolute;
@@ -231,20 +238,17 @@ img {
 .features {
   /*padding-top: 120px;
   padding-bottom: 120px;*/
-  padding-top: 96px;
-  padding-bottom: 96px;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 .features-list {
   background-color: #ffffff;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  /*justify-content: space-between;*/
   /*gap: 24px;*/
   gap: 72px;
 }
 .features-item {
-  max-width: 264px;
+  width: 100%;
   /*width: calc((100% - 72px) / 4);*/
 }
 .features-icon {
@@ -269,6 +273,7 @@ img {
 }
 .features-subtitel {
   margin-bottom: 8px;
+  text-align: center;
 }
 .features-item-text {
 }
@@ -793,25 +798,40 @@ img {
 }
 @media screen and (min-width: 768px) {
   .container {
-    width: 736px;
+    max-width: 768px;
   }
+
   .features-list {
-    gap: 24px 72px;
+    row-gap: 72px;
+    column-gap: 24px;
+    justify-content: space-between;
   }
   .features-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .features-subtitel {
+    text-align: start;
   }
 }
-
 @media screen and (min-width: 1158px) {
   .container {
-    width: 736px;
+    max-width: 1158px;
     padding-top: 120px;
     padding-bottom: 120px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .features-list {
-    gap: 72px 24px;
+    justify-content: space-between;
+    gap: 24px;
   }
   .features-item {
     width: calc((100% - 72px) / 4);
+  }
+  .features-icon {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
   }
 }
